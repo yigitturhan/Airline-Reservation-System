@@ -14,7 +14,6 @@ const std::string &Passenger::getLastname() const {
 }
 
 bool Passenger::operator<(const Passenger &rhs) const {
-    /* TODO */
     if(lastname < rhs.lastname){
         return true;
     }
