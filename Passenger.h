@@ -1,7 +1,6 @@
 #ifndef PASSENGER_H
 #define PASSENGER_H
 
-// DO NOT CHANGE THIS FILE.
 
 #include <iostream>
 
