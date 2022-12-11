@@ -9,7 +9,7 @@ enum TraversalPlan {preorder, inorder, postorder};
 
 template<class T>
 class BST {
-public: // DO NOT CHANGE THIS PART.
+public:
     BST();
     BST(const BST<T> &obj);
 
@@ -31,7 +31,7 @@ public: // DO NOT CHANGE THIS PART.
 
     BST<T> &operator=(const BST<T> &rhs);
 
-private: // YOU MAY ADD YOUR OWN UTILITY MEMBER FUNCTIONS HERE.
+private:
     void print(BSTNode<T> *node, TraversalPlan tp) const;
     void destructorhelper(BSTNode<T> *node){
         if (node){
@@ -235,7 +235,6 @@ BST<T>::BST() {
 
 template<class T>
 BST<T>::BST(const BST<T> &obj) {
-    /* TODO */
     root = NULL;
     (*this) = obj;
 
@@ -243,32 +242,27 @@ BST<T>::BST(const BST<T> &obj) {
 
 template<class T>
 BST<T>::~BST() {
-    /* TODO */
     destructorhelper(root);
     root = NULL;
 }
 
 template<class T>
 BSTNode<T> *BST<T>::getRoot() const {
-    /* TODO */
     return root;
 }
 
 template<class T>
 bool BST<T>::isEmpty() const {
-    /* TODO */
     return root == NULL;
 }
 
 template<class T>
 bool BST<T>::contains(BSTNode<T> *node) const {
-    /* TODO */
     return containshelper(root,node);
 }
 
 template<class T>
 void BST<T>::insert(const T &data) {
-    /* TODO */
     if (!root){
         BSTNode<T> *x = new BSTNode<T>;
         x->data = data;
@@ -283,7 +277,6 @@ void BST<T>::insert(const T &data) {
 
 template<class T>
 void BST<T>::remove(const T &data) {
-    /* TODO */
     if(root){
         if(root->data == data && !root->right && !root->left){
             delete root;
@@ -296,7 +289,6 @@ void BST<T>::remove(const T &data) {
 
 template<class T>
 void BST<T>::removeAllNodes() {
-    /* TODO */
     if(!root){
         return;
     }
@@ -310,7 +302,6 @@ void BST<T>::removeAllNodes() {
 
 template<class T>
 BSTNode<T> *BST<T>::search(const T &data) const {
-    /* TODO */
     return searchhelper(root,data);
 }
 
@@ -318,7 +309,6 @@ template<class T>
 BSTNode<T> *BST<T>::getSuccessor(BSTNode<T> *node, TraversalPlan tp) const {
 
     if (tp == inorder) {
-        /* TODO */
         if(root->data == node->data && !root->left && !root->right){
             return NULL;
         }
@@ -336,7 +326,6 @@ BSTNode<T> *BST<T>::getSuccessor(BSTNode<T> *node, TraversalPlan tp) const {
         }
         return parent;
     } else if (tp == preorder) {
-        /* TODO */
         if(node->left){
             return node->left;
         }
@@ -358,7 +347,6 @@ BSTNode<T> *BST<T>::getSuccessor(BSTNode<T> *node, TraversalPlan tp) const {
         return parent->right;
         
     } else if (tp == postorder) {
-        /* TODO */
         if(node == root){
             return NULL;
         }
@@ -397,7 +385,6 @@ void BST<T>::print(TraversalPlan tp) const {
         print(root, inorder);
         std::cout << std::endl << "}" << std::endl;
     } else if (tp == preorder) {
-        /* TODO */
         if (isEmpty()) {
             std::cout << "BST_preorder{}" << std::endl;
             return;
@@ -406,7 +393,6 @@ void BST<T>::print(TraversalPlan tp) const {
         print(root, preorder);
         std::cout << std::endl << "}" << std::endl;
     } else if (tp == postorder) {
-        /* TODO */
         if (isEmpty()) {
             std::cout << "BST_postorder{}" << std::endl;
             return;
@@ -419,7 +405,6 @@ void BST<T>::print(TraversalPlan tp) const {
 
 template<class T>
 BST<T> &BST<T>::operator=(const BST<T> &rhs) {
-    /* TODO */
     if(!this->isEmpty()){
         this->removeAllNodes();
     }
@@ -451,7 +436,6 @@ void BST<T>::print(BSTNode<T> *node, TraversalPlan tp) const {
         }
         print(node->right, inorder);
     } else if (tp == preorder) {
-        /* TODO */
         std::cout << "\t" << node->data;
         if (node->left) {
             std::cout << "," << std::endl;
@@ -464,7 +448,6 @@ void BST<T>::print(BSTNode<T> *node, TraversalPlan tp) const {
         print(node->right, preorder);
         
     } else if (tp == postorder) {
-        /* TODO */
         print(node->left, postorder);
         if (node->left) {
             std::cout << "," << std::endl;
