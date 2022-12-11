@@ -1,7 +1,6 @@
 #ifndef FLIGHT_H
 #define FLIGHT_H
 
-// DO NOT CHANGE THIS FILE.
 
 #include <iostream>
 #include <vector>
