@@ -1,7 +1,6 @@
 #include "AirlineReservationSystem.h"
 
 void AirlineReservationSystem::addPassenger(const std::string &firstname, const std::string &lastname) {
-    /* TODO */
     Passenger ps(firstname,lastname);
     if(!passengers.search(ps)){
         passengers.insert(ps);
@@ -9,7 +8,6 @@ void AirlineReservationSystem::addPassenger(const std::string &firstname, const 
 }
 
 Passenger *AirlineReservationSystem::searchPassenger(const std::string &firstname, const std::string &lastname) {
-    /* TODO */
     Passenger ps(firstname,lastname);
     if(passengers.search(ps)){
         return &(passengers.search(ps)->data);
@@ -18,7 +16,6 @@ Passenger *AirlineReservationSystem::searchPassenger(const std::string &firstnam
 }
 
 void AirlineReservationSystem::addFlight(const std::string &flightCode, const std::string &departureTime, const std::string &arrivalTime, const std::string &departureCity, const std::string &arrivalCity, int economyCapacity, int businessCapacity) {
-    /* TODO */
     Flight ff(flightCode,departureTime,arrivalTime,departureCity,arrivalCity,economyCapacity,businessCapacity);
     if(!flights.search(ff)){
         flights.insert(ff);
@@ -26,7 +23,6 @@ void AirlineReservationSystem::addFlight(const std::string &flightCode, const st
 }
 
 std::vector<Flight *> AirlineReservationSystem::searchFlight(const std::string &departureCity, const std::string &arrivalCity) {
-    /* TODO */
     BSTNode<Flight> *root = flights.getRoot();
     std::vector<Flight *> vct;
     searchflighthelper(root,departureCity,arrivalCity,vct);
@@ -34,7 +30,6 @@ std::vector<Flight *> AirlineReservationSystem::searchFlight(const std::string &
 }
 
 void AirlineReservationSystem::issueTicket(const std::string &firstname, const std::string &lastname, const std::string &flightCode, TicketType ticketType) {
-    /* TODO */
     Passenger *pas = passengersearch(passengers.getRoot(),firstname,lastname);
     Flight *fli = flightsearch(flights.getRoot(),flightCode);
     if(fli && pas){
@@ -44,7 +39,6 @@ void AirlineReservationSystem::issueTicket(const std::string &firstname, const s
 }
 
 void AirlineReservationSystem::saveFreeTicketRequest(const std::string &firstname, const std::string &lastname, const std::string &flightCode, TicketType ticketType) {
-    /* TODO */
     Passenger *pas = passengersearch(passengers.getRoot(),firstname,lastname);
     Flight *fli = flightsearch(flights.getRoot(),flightCode);
     if(fli && pas){
@@ -54,7 +48,6 @@ void AirlineReservationSystem::saveFreeTicketRequest(const std::string &firstnam
 }
 
 void AirlineReservationSystem::executeTheFlight(const std::string &flightCode) {
-    /* TODO */
     Flight *fli = flightsearch(flights.getRoot(),flightCode);
     if(fli){
         for(int i=1;i<=freeTicketRequests.size();i++){
