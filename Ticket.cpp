@@ -1,6 +1,5 @@
 #include "Ticket.h"
 
-// DO NOT CHANGE THIS FILE.
 
 Ticket::Ticket(Passenger *passenger, Flight *flight, TicketType ticketType) {
     static int ticketId = 1;
