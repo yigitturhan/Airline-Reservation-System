@@ -1,7 +1,6 @@
 #ifndef TICKET_H
 #define TICKET_H
 
-// DO NOT CHANGE THIS FILE.
 
 #include <iostream>
 
