@@ -48,7 +48,6 @@ void Flight::setCompleted(bool completed) {
 }
 
 bool Flight::addTicket(const Ticket &ticket) {
-    /* TODO */
     if(ticket.getTicketType() == economy && economyCapacity > 0){
         tickets.push_back(ticket);
         return true;
@@ -61,7 +60,6 @@ bool Flight::addTicket(const Ticket &ticket) {
 }
 
 bool Flight::operator<(const Flight &rhs) const {
-    /* TODO */
     if(flightCode < rhs.flightCode){
         return true;
     }
