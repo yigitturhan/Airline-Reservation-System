@@ -8,7 +8,7 @@
 #include "Ticket.h"
 
 class AirlineReservationSystem {
-public: // DO NOT CHANGE THIS PART.
+public:
     AirlineReservationSystem() {}
 
     void addPassenger(const std::string &firstname, const std::string &lastname);
@@ -27,7 +27,7 @@ public: // DO NOT CHANGE THIS PART.
 
     void print() const;
 
-private: // YOU MAY ADD YOUR OWN UTILITY MEMBER FUNCTIONS HERE.
+private:
     void searchflighthelper(BSTNode<Flight> *node, std::string const &departurecity , std::string const &arrivalcity, std::vector<Flight *> &vct){
         if(node == NULL){
             return;
@@ -72,7 +72,7 @@ private: // YOU MAY ADD YOUR OWN UTILITY MEMBER FUNCTIONS HERE.
         }
     }
 
-private: // DO NOT CHANGE THIS PART.
+private:
     BST<Passenger> passengers;
     BST<Flight> flights;
 
